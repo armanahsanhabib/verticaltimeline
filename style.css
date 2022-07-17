@@ -1,0 +1,53 @@
+.card {
+  background-color: #ccc;
+}
+
+.card:nth-child(odd) {
+  text-align: right;
+  width: 45%;
+  clear: right;
+  position: relative;
+}
+.card:nth-child(odd)::after {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+  right: -7.5px;
+  top: 50%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.card:nth-child(even) {
+  text-align: left;
+  width: 45%;
+  float: right;
+  clear: left;
+  position: relative;
+}
+
+.card:nth-child(even)::after {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+  left: -7.5px;
+  top: 50%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.container::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  top: 1.5rem;
+  background-color: #ccc;
+  border-radius: 5px;
+}
